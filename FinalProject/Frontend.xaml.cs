@@ -336,6 +336,8 @@ namespace FinalProject
 
             if (res == MessageBoxResult.OK)
             {
+                try
+                {
 
                 var del_data = context.reservation.FirstOrDefault(r => r.Id == id);
                 context.reservation.Remove(del_data);
@@ -350,6 +352,11 @@ namespace FinalProject
                 combobox.ItemsSource = result1;
 
                 combobox.DisplayMemberPath = "reservation";
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Delete Error");
+                }
             }
             else
             {
@@ -368,6 +375,8 @@ namespace FinalProject
             var splid = spldata[0].Split(" = ");
             int id = int.Parse(splid[1]);
             var del_data = context.reservation.FirstOrDefault(r => r.Id == id);
+            try
+            {
 
             del_data.first_name = fnametxt.Text;
             del_data.last_name = lnametxt.Text;
@@ -396,13 +405,33 @@ namespace FinalProject
             del_data.towel = (bool)foodMenu.Towels.IsChecked.Value;
             del_data.cleaning = (bool)foodMenu.clean.IsChecked.Value;
             del_data.s_surprise = (bool)foodMenu.sweet.IsChecked.Value;
-            del_data.break_fast = int.Parse(foodMenu.txtbreakfast.Text);
-            del_data.lunch = int.Parse(foodMenu.txtlunch.Text);
-            del_data.dinner = int.Parse(foodMenu.txtdinner.Text);
+
+            if (foodMenu.chkboxbreakfast.IsChecked.Value)
+            {
+                del_data.break_fast = int.Parse(foodMenu.txtbreakfast.Text);
+
+            }
+
+            if (foodMenu.chkboxlunch.IsChecked.Value)
+
+            {
+                del_data.lunch = int.Parse(foodMenu.txtlunch.Text);
+            }
+
+            if (foodMenu.chkboxdinner.IsChecked.Value)
+            {
+                del_data.dinner = int.Parse(foodMenu.txtdinner.Text);
+            }
+
             
             context.reservation.Update(del_data);
             context.SaveChanges();
             MessageBox.Show("Date Updated Successfully", "Update Info");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Update Error");
+            }
 
 
         }
