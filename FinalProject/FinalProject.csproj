@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="images\breakfast.png" />
+    <None Remove="images\Dinner_new_png.png" />
+    <None Remove="images\edit.png" />
+    <None Remove="images\ic_action_previous_item.png" />
+    <None Remove="images\ic_action_search %283%29.png" />
+    <None Remove="images\licen.png" />
+    <None Remove="images\lunch_new_png.png" />
+    <None Remove="images\searcherror_6.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\ic_action_previous_item.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\breakfast.png" />
+    <Resource Include="images\Dinner_new_png.png" />
+    <Resource Include="images\edit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\ic_action_search (3).png" />
+    <Resource Include="images\licen.png" />
+    <Resource Include="images\lunch_new_png.png" />
+    <Resource Include="images\searcherror_6.png" />
+  </ItemGroup>
+
+</Project>

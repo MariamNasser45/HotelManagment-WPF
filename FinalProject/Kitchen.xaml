@@ -1,0 +1,292 @@
+﻿<Window x:Class="FinalProject.Kitchen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalProject"
+        mc:Ignorable="d"
+        Title="Kitchen" Height="600" Width="1000">
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <!--#region Header -->
+
+            <StackPanel Grid.Row="0"  Margin="0,0,0,0" Orientation="Horizontal">
+
+                <Label x:Name="lblheader"
+                   Width="176" FontSize="16"
+                   FontWeight="Bold"
+                   FontFamily="Adobe Caslon Pro Bold"
+                   Height="29" 
+                   Content="Room Service"
+                       Margin="0,0,0,400"/>
+
+                <Button Width="38" Height="28" FontWeight="Bold" FontSize="15" 
+                        Click="btn_back"
+                        Margin="700,0,0,400" >
+                <Image  Source="images/ic_action_previous_item.png" Height="18" Width="19"  />
+                </Button>
+
+            </StackPanel>
+
+            <!--#endregion-->
+
+
+            <TabControl  Margin="0,41,0,0" Grid.RowSpan="2">
+
+                <!--#region ToDo -->
+
+                <TabItem  Header="TODO*"
+                   FontSize="16"
+                   FontFamily="Adobe Caslon "
+                   Height="37"
+                   Margin="0,0,0,0" VerticalAlignment="Top">
+
+
+
+                    <StackPanel  Orientation="Horizontal" HorizontalAlignment="Left">
+
+                        <!--#region First part -->
+
+                        <StackPanel Orientation="Horizontal" Height="400" Width="986">
+
+
+                            <StackPanel
+                                
+                                Width="320">
+
+                                <Label
+                                Content="Name"
+                                Margin="15,10,10,10"
+                                Padding="15,10,10,10" FontWeight="Bold"/>
+                                <TextBox x:Name="fname"
+                                Width="130"
+                                Height="30"
+                                Margin="-150,-10,0,0" 
+                                IsEnabled="False"
+                                Text="{Binding SelectedItem.first_name , ElementName=ontmhelinelst}"
+                                />
+
+                                <TextBox x:Name="lname" 
+                                Width="130"
+                                Height="30"
+                                Margin="-150,0,0,-60" IsEnabled="False"
+                                Text="{Binding SelectedItem.last_name , ElementName=ontmhelinelst}"
+                                         
+                                
+                                />
+
+                                <Label x:Name="phon"
+                                Content="Phon Number"
+                                Margin="10,50,10,10"
+                                Padding="15,10,10,10" FontWeight="Bold"/>
+                                <Label/>
+
+                                <TextBox x:Name="phontxt" Margin="25,-15,10,10" Height="25" 
+                                         IsEnabled="False" 
+                                Text="{Binding SelectedItem.phone_number , ElementName=ontmhelinelst}"
+                                         />
+
+                                <Label
+                                Content="Room Type"
+                                Margin="25,-8,10,10"
+                                FontWeight="Bold"
+                                />
+
+                                <TextBox x:Name="roomtype" Margin="25,-8,10,10" Height="26" 
+                                Text="{Binding SelectedItem.room_type , ElementName=ontmhelinelst, Mode=Default }"
+                                         IsEnabled="False"
+                                         />
+
+
+
+                                <Label
+                                Content="Room Number"
+                                Margin="25,-8,10,10"
+                                FontWeight="Bold"/>
+
+                                <TextBox x:Name="roomnum"
+                                Margin="25,-8,10,10" Height="31" IsEnabled="False"
+                                Text="{Binding SelectedItem.room_number , ElementName=ontmhelinelst, Mode=Default }"
+                                        />
+
+                                <Label
+                                Content="Floor Number"
+                                Margin="25,-8,10,10"
+                                FontWeight="Bold"/>
+
+                                <TextBox x:Name="floornum"
+                                Margin="25,-8,10,10" Height="27" IsEnabled="False"
+                                Text="{Binding SelectedItem.room_floor , ElementName=ontmhelinelst, Mode=Default }"
+                                         />
+
+                              
+                            </StackPanel>
+
+                            <!--#endregion-->
+
+
+                            <!--#region Middle part -->
+
+                            <StackPanel  Orientation="Vertical" Width="239" Height="400" >
+
+                                <Label Content="Todo" Height="29"/>
+
+                                <Border  
+                                BorderBrush="Black"
+                                BorderThickness="1">
+
+                                    <StackPanel Orientation="Vertical" Height="338">
+
+                                        <StackPanel 
+                                        Height="266" 
+                                        Width="235" 
+                                        Margin="0,0,0,300" Orientation="Horizontal">
+
+                                            <StackPanel x:Name="cleanchkbox" Orientation="Vertical" Height="224">
+
+                                                <Label HorizontalAlignment="Left" 
+                                               Content="BreakFast[QTY]"
+                                               Width="117"></Label>
+                                                <TextBox x:Name="breakfast" Height="23" Margin="0,10" 
+                                                         IsEnabled="False"
+                                                     Text="{Binding SelectedItem.break_fast , ElementName=ontmhelinelst, Mode=Default }"
+                                                         ></TextBox>
+
+
+                                                <Label HorizontalAlignment="Left" 
+                                               Content="Dinner[QTY]"
+                                               Width="117"></Label>
+                                                <TextBox x:Name="dinner" Height="23" Margin="0,10" IsEnabled="False"
+                                                     Text="{Binding SelectedItem.dinner , ElementName=ontmhelinelst, Mode=Default }"
+                                                         ></TextBox>
+
+                                                <CheckBox Height="17" Name="Cleaning" Content="Cleaning"  Width="94" Margin="0,10" IsEnabled="False"
+                                                         />
+
+                                                <CheckBox x:Name="towelchkbox" Height="18"  Content="Towels" Width="93" Margin="0,10" IsChecked="False" IsEnabled="False"
+                                                          />
+
+
+                                            </StackPanel>
+
+
+                                            <StackPanel Width="20"></StackPanel>
+
+                                            <StackPanel Orientation="Vertical" Height="230">
+
+                                                <Label HorizontalAlignment="Right" 
+                                               Content="Lunch[QTY]"
+                                               Width="98" Height="30"></Label>
+
+                                                <TextBox x:Name="lunch" Height="23" Margin="0,10" IsEnabled="False"
+                                                     Text="{Binding SelectedItem.lunch , ElementName=ontmhelinelst, Mode=Default }"
+                                                         ></TextBox>
+
+                                                <CheckBox x:Name="sweetchkbox" Height="18" Content="Sweetest"  Margin="0,85" IsEnabled="False"
+                                                          />
+
+                                            </StackPanel>
+
+                                        </StackPanel>
+
+
+                                    </StackPanel>
+
+                                </Border>
+
+                                <CheckBox x:Name="foodchkbox" Content="Food/Supply Status?" Margin="30,-40,0,0"
+                                          ></CheckBox>
+
+                                <!--#region Update Btn -->
+
+                                <StackPanel >
+                                    <Button x:Name="btnnext"
+                            Content="Change Food Selection?"
+                            FontWeight="Bold"
+                            FontFamily="Adobe Caslon Pro Bold"
+                            FontSize="16"
+                            HorizontalAlignment="Center"
+                            Width="239" Height="34" Background="#FFE2E2E2" Click="btnnext_Click"
+                                />
+                                </StackPanel>
+
+                                <!--#endregion-->
+
+                            </StackPanel>
+
+                            <!--#endregion-->
+
+
+                            <!--#region Right part -->
+
+                            <StackPanel Orientation="Vertical" Width="239" Height="400" >
+
+                                <Label Content="On the line" Height="29"/>
+
+                                <StackPanel  Background="#FFC0BBBB" Height="338">
+
+                                    <ListBox x:Name="ontmhelinelst" Height="337"></ListBox>
+
+                                </StackPanel>
+
+                                <!--#region Update Btn -->
+
+                                <StackPanel >
+                                    <Button x:Name="btnchangeFood"
+                            Content="Update Changes"
+                            FontWeight="Bold"
+                            FontFamily="Adobe Caslon Pro Bold"
+                            FontSize="16"
+                            HorizontalAlignment="Center"
+                            Width="239" Height="34" Background="#FFE2E2E2"
+                              Click="btn_update"  />
+                                </StackPanel>
+
+                                <!--#endregion-->
+
+                                <!--#endregion-->
+
+                            </StackPanel>
+
+                            <!--#region special needed -->
+
+                            <!--#endregion-->
+
+
+                        </StackPanel>
+                        <!--#endregion-->
+
+                    </StackPanel>
+                </TabItem>
+                <!--#endregion-->
+
+                <!--#region overview -->
+
+                <TabItem   Header="Overview"
+                   FontSize="16"
+                   FontFamily="Adobe Caslon "
+                   Height="37"
+                   Margin="0,0,0,0" VerticalAlignment="Top" GotFocus="TabItem_GotFocus">
+
+                    <DataGrid x:Name="Kitchendatagrid"></DataGrid>
+
+                </TabItem>
+                <!--#endregion-->
+
+            </TabControl>
+
+
+
+
+
+
+
+
+        </Grid>
+
+    </ScrollViewer>
+</Window>

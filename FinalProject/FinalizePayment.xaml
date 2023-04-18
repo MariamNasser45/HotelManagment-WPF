@@ -1,0 +1,102 @@
+﻿<Window x:Class="FinalProject.FinalizePayment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="FinalizePayment" Height="290" Width="450"
+        
+        WindowStartupLocation="CenterScreen"
+        >
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Margin="10" Grid.Column="0" Grid.Row="0">Reservation</TextBlock>
+        <TextBlock HorizontalAlignment="Right" Margin="10" Grid.Column="1" Grid.Row="0">Price</TextBlock>
+
+        <TextBlock Margin="10,0,0,5" Grid.Column="0" Grid.Row="1">Current bill</TextBlock>
+        <TextBlock Name="lblCurentBill" Margin="0,0,70,5" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1">$</TextBlock>
+
+
+        <TextBlock Margin="10,0,0,5" Grid.Column="0" Grid.Row="2">Food bill</TextBlock>
+        <TextBlock Name="lblFoodBill" Margin="0,0,70,5" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="2">$</TextBlock>
+
+
+        <TextBlock Margin="0,0,120,5" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="3">Tax</TextBlock>
+        <TextBlock Name="lblTax" Margin="0,0,90,5" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="3">$</TextBlock>
+
+        <TextBlock Margin="0,0,132,5" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="4" FontWeight="Bold">Total</TextBlock>
+        <TextBlock Name="lblTotal" Margin="0,0,100,5" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="4">$</TextBlock>
+
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="5">
+            <TextBlock Margin="10,5">Payment</TextBlock>
+            <ComboBox Name="comboBoxPaymentMethod"  HorizontalAlignment="Left" Margin="10,5" Width="132">
+                <ComboBoxItem>Credit</ComboBoxItem>
+                <ComboBoxItem>Debit</ComboBoxItem>
+
+            </ComboBox>
+        </StackPanel>
+        <TextBox Name="CardNumber"  Margin="159,31,10,6" Grid.Row="5" Height="22" 
+                 Grid.ColumnSpan="2"
+                 Text="(999) 999-999" GotFocus="phonyxy_GotFocus"/>
+
+        <ComboBox Name="comboBoxMM" Margin="10,5,0,0" Width="75" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">
+            <ComboBoxItem>1</ComboBoxItem>
+            <ComboBoxItem>2</ComboBoxItem>
+            <ComboBoxItem>3</ComboBoxItem>
+            <ComboBoxItem>4</ComboBoxItem>
+            <ComboBoxItem>5</ComboBoxItem>
+            <ComboBoxItem>6</ComboBoxItem>
+            <ComboBoxItem>7</ComboBoxItem>
+            <ComboBoxItem>8</ComboBoxItem>
+            <ComboBoxItem>9</ComboBoxItem>
+            <ComboBoxItem>10</ComboBoxItem>
+            <ComboBoxItem>11</ComboBoxItem>
+            <ComboBoxItem>12</ComboBoxItem>
+        </ComboBox>
+        
+        <TextBlock FontSize="15" Margin="90,5,0,0" Width="40" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">/</TextBlock>
+
+        <ComboBox Name="comboBoxYY" Margin="100,5,0,0" Width="68" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">
+          
+            <ComboBoxItem>14</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>16</ComboBoxItem>
+            <ComboBoxItem>17</ComboBoxItem>
+            <ComboBoxItem>18</ComboBoxItem>
+            <ComboBoxItem>19</ComboBoxItem>
+            <ComboBoxItem>20</ComboBoxItem>
+            <ComboBoxItem>21</ComboBoxItem>
+            <ComboBoxItem>22</ComboBoxItem>
+            <ComboBoxItem>23</ComboBoxItem>
+            <ComboBoxItem>24</ComboBoxItem>
+            
+        </ComboBox>
+
+        <TextBox Name="TboxCVV" Margin="200,5,0,0" Width="60" HorizontalAlignment="Left" 
+                 Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2"
+                 Text="CVC" GotFocus="Cvcplaceholder"></TextBox>
+     
+        <TextBlock Margin="290,5,0,0" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">Card type:</TextBlock>
+  
+        <TextBlock Name="CardType" Margin="350,5,0,0" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">Unknown</TextBlock>
+
+        <Button Name="btnNext" Click="btn_next"  Margin="0,10,20,0" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="7" Width="83">Next</Button>
+    </Grid>
+
+    </Window>

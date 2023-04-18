@@ -1,0 +1,136 @@
+﻿<Window x:Class="FinalProject.FoodMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalProject"
+        mc:Ignorable="d"
+        Title="FoodMenu" Height="400" Width="600">
+    <ScrollViewer>
+        <Grid>
+
+            <Label Height="15" Width="600" Background="#FFB5F6F6" Margin="0,-500,0,0"></Label>
+
+            <StackPanel Orientation="Horizontal" Margin="10,0,10,512">
+                <Label Content="Food and Menu"
+                         Width="176" FontSize="16"
+                   FontWeight="Bold"
+                   FontFamily="Adobe Caslon Pro Bold"
+                   Height="29" 
+                       Margin="0,0,0,-60"/>
+            </StackPanel>
+
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Left">
+
+                <StackPanel
+                    Margin="10,0,0,0"
+                    Width="300"
+                    Background="#FFE2E2E2"
+                    Height="400">
+
+                    <Label Content="Food Selection" Margin="0,0,0,0"></Label>
+                    
+                    <!--#region Images -->
+                    
+                    <StackPanel Height="200" Orientation="Horizontal">
+
+                        <StackPanel Orientation="Vertical" Width="140" Height="140">
+
+                            <StackPanel Orientation="Vertical">
+
+                                <Image Source="images/breakfast.png" Margin="0,-30" Height="115"></Image>
+                                <CheckBox x:Name="chkboxbreakfast" Content="Break Fast  ($7)" Margin="0,30" Checked="CheckBox_Checked"></CheckBox>
+                               
+                                <Border BorderBrush="Black"
+                                    BorderThickness="1"
+                                    VerticalAlignment="Top"
+                                   Width="80" Height="18" Margin="0,-30,50,0" >
+                                    <TextBox  x:Name="txtbreakfast" Width="80" Height="18"  Padding="0,-4,0,0" IsEnabled="False" GotFocus="txtbreakfast_GotFocus" ></TextBox>
+
+                                </Border>
+
+                            </StackPanel>
+
+                        </StackPanel>
+
+                        <StackPanel Width="25"></StackPanel>
+
+
+                        <StackPanel Orientation="Vertical" Width="140" Height="140">
+
+                            <Image Source="images/lunch_new_png.png" Margin="0,-30" Height="115"></Image>
+                            <CheckBox x:Name="chkboxlunch" Content="Lunch  ($15)" Margin="0,30" Checked="chkboxlunch_Checked"></CheckBox>
+
+                            <Border BorderBrush="Black"
+                                    BorderThickness="1"
+                                    VerticalAlignment="Top"
+                                   Width="80" Height="18" Margin="0,-30,50,0" >
+                                <TextBox GotFocus="txtlunch_GotFocus"  x:Name="txtlunch" Width="80" Height="18"  Padding="0,-4,0,0" IsEnabled="False" ></TextBox>
+
+                            </Border>
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <StackPanel HorizontalAlignment="Left" Height="140" >
+                        <Image Source="images/Dinner_new_png.png" Margin="0,-30" Height="115"></Image>
+                        <CheckBox x:Name="chkboxdinner" Content="Dinner  ($15)" Margin="0,30" Checked="chkboxdinner_Checked"></CheckBox>
+                        <Border BorderBrush="Black"
+                                    BorderThickness="1"
+                                    VerticalAlignment="Top"
+                                   Width="80" Height="18" Margin="0,-30,50,0" >
+                            <TextBox  x:Name="txtdinner" Width="80" Height="18"  Padding="0,-4,0,0" IsEnabled="False" GotFocus="txtdinner_GotFocus" ></TextBox>
+
+                        </Border>
+                    </StackPanel>
+
+                </StackPanel>
+                <!--#endregion-->
+                
+
+                <StackPanel Width="15"></StackPanel>
+
+                <!--#region special needed -->
+                
+                <StackPanel Orientation="Vertical" Width="239" Height="400"  >
+
+
+                    <StackPanel x:Name="specialned"  Background="#FFC0BBBB" Height="365" Visibility="Hidden">
+
+                        <Label Content="Special Needed"> </Label>
+
+                        <CheckBox Margin="20,10" Height="30" Content="Cleaning" x:Name="clean"></CheckBox>
+
+                        <CheckBox Margin="20,10"  Height="30" Content="Towels" x:Name="Towels"></CheckBox>
+
+                        <CheckBox Margin="20,10"  Height="30" Content="Sweetest Surprise" x:Name="sweet"></CheckBox>
+                    </StackPanel>
+                    
+                    <!--#region Next Btn -->
+                    
+                    <StackPanel>
+                        <Button x:Name="btnnext"
+                            Content="Next"
+                            FontWeight="Bold"
+                            FontFamily="Adobe Caslon Pro Bold"
+                            FontSize="16"
+                            HorizontalAlignment="Center"
+                            Width="239" Height="34" Background="#FFE2E2E2"
+                                Click="btn_next"/>
+                    </StackPanel>
+                    <!--#endregion-->
+                    
+                    <!--#endregion-->
+
+                </StackPanel>
+
+
+
+
+            </StackPanel>
+
+        </Grid>
+
+    </ScrollViewer>
+
+</Window>

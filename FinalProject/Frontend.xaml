@@ -1,0 +1,461 @@
+﻿<Window x:Class="FinalProject.Frontend"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalProject"
+        mc:Ignorable="d"
+        Title="Frontend" Height="600" Width="1000">
+    <ScrollViewer HorizontalScrollBarVisibility="Visible">
+        <Grid Height="750" VerticalAlignment="Stretch" Margin="0,0,0,0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="750"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!--#region Header  -->
+
+            <StackPanel Grid.Row="0"  Orientation="Horizontal"  Margin="0,0,0,0">
+                <Label x:Name="lblheader"
+                   Width="176" FontSize="16"
+                   FontWeight="Bold"
+                   FontFamily="Adobe Caslon Pro Bold"
+                   Height="29" 
+                   Content="Frontend"/>
+
+                <Button Width="38" Height="28" FontWeight="Bold" FontSize="15" 
+                        Margin="730,0,0,10" Click="btn_back">
+                    <Image  Source="images/ic_action_previous_item.png" Height="18" Width="19"  /> 
+                </Button>
+            </StackPanel>
+
+            <!--#endregion-->
+
+            <!--#region Body -->
+
+            <StackPanel Orientation="Horizontal" 
+                    Margin="0,0,0,0" Grid.Row="1" 
+                    Width="1000"
+                    >
+                <TabControl Height="750" Width="982"  GotFocus="TabControl_GotFocus" >
+
+                    <!--#region Reservation -->
+
+                    <!--#region Reservation part 1 -->
+                    <TabItem
+
+                   Header="Reservation"
+                   FontSize="16"
+                   FontFamily="Adobe Caslon "
+                   Height="37"
+                   Margin="5,0,0,0" VerticalAlignment="Top" 
+                   
+                   >
+
+
+                        <StackPanel Orientation="Horizontal" Height="750" Width="986">
+
+
+                            <StackPanel
+                                Background="#FFB1AAAA"
+                                Width="320">
+
+                                <Label
+                                Content="Name"
+                                Margin="15,10,10,10"
+                                Padding="15,10,10,10" FontWeight="Bold"/>
+                                <StackPanel Orientation="Horizontal">
+                                   
+                                    <TextBox x:Name="fnametxt"
+                                Width="130"
+                                Height="30"
+                                Margin="25,10,10,10"
+                                
+                                 GotFocus="fnametxt_GotFocus"            
+                                        />
+
+                                    <TextBox x:Name="lnametxt" 
+                                Width="130"
+                                Height="30"
+                                Margin="25,0,0,-2"
+                                GotFocus="lnametxt_GotFocus"
+                                />
+                                </StackPanel>
+
+
+
+                                <StackPanel>
+                                    <Label
+                                Content="BirthDate"
+                                Margin="1,0,0,0"
+                                Padding="25,10,10,10" FontWeight="Bold"/>
+                                    <Label/>
+
+                                    <DatePicker Name="DOB" Margin="25,-15,10,10"/>
+                                </StackPanel>
+
+
+                                <StackPanel>
+                                    <Label
+                                Content="Gender"
+                                Margin="25,-8,10,10"
+                                FontWeight="Bold"
+                                />
+
+                                    <ComboBox Name="gen" Margin="25,-8,10,10">
+                                        <ComboBoxItem>Male</ComboBoxItem>
+                                        <ComboBoxItem>Female</ComboBoxItem>
+                                        <ComboBoxItem>Other</ComboBoxItem>
+                                    </ComboBox>
+
+                                </StackPanel>
+
+
+
+                                <StackPanel>
+
+
+
+                                    <Label
+                                Content="Phone Number"
+                                Padding="30,10,10,10" FontWeight="Bold"/>
+
+                                    <TextBox x:Name="phonnum"
+                                Width="283"
+                                Height="26"
+                                Margin="25,0,10,10"
+
+                                GotFocus="phonyxy_GotFocus"/>
+
+                                </StackPanel>
+                                <StackPanel>
+
+                                    <Label
+                                Content="Your E-mail Address"
+                                Margin="25,-8,10,10"
+                                FontWeight="Bold"/>
+
+                                    <TextBox x:Name="txtemail"
+                                Margin="25,-8,10,10" 
+                               GotFocus="TextBox_GotFocus"
+                                      
+                                />
+
+                                </StackPanel>
+
+
+                                <TextBox x:Name="addtxt"
+                                Margin="25,8,10,10"
+                                 GotFocus="addtxt_GotFocus"/>
+
+
+
+                                <TextBox x:Name="apttxt"
+                                Margin="25,8,10,10"
+                                 GotFocus="apttxt_GotFocus"/>
+
+                                <TextBox x:Name="Citytxt"
+                                Margin="25,8,10,10"
+                                    GotFocus="Citytxt_GotFocus"/>
+
+
+
+                                <TextBox x:Name="ziptxt"
+                                Margin="25,8,10,10"
+                                     GotFocus="ziptxt_GotFocus"/>
+
+                                <Label
+                                Content="State"
+                                Margin="25,8,10,10"
+                                FontWeight="Bold"/>
+
+                                <ComboBox Margin="25,8,10,10" Name="statecombobox">
+
+                                    <ComboBoxItem>New York</ComboBoxItem>
+                                    <ComboBoxItem>Alaska</ComboBoxItem>
+                                    <ComboBoxItem>Arizona</ComboBoxItem>
+                                    <ComboBoxItem>Arkansas</ComboBoxItem>
+                                    <ComboBoxItem>Nevada</ComboBoxItem>
+                                    <ComboBoxItem>Alabama</ComboBoxItem>
+                                    <ComboBoxItem>Arizona</ComboBoxItem>
+                                    <ComboBoxItem>California</ComboBoxItem>
+                                    <ComboBoxItem>Montana Nebraska</ComboBoxItem>
+                                    <ComboBoxItem>Louisiana</ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
+                            <!--#endregion-->
+
+
+                            <!--#region Reservation part2 -->
+
+                            <StackPanel Width="5"></StackPanel>
+
+                            <StackPanel 
+                                Background="#FFB1AAAA"
+                                Width="320"  >
+
+                                <Label
+                                    Margin="20,10,10,10"
+                                    Content="Number Of Guests"
+                                    FontWeight="Bold"/>
+
+                                <ComboBox Margin="25,0,10,10" Name="combonumb">
+                                    <ComboBoxItem>0</ComboBoxItem>
+                                    <ComboBoxItem>1</ComboBoxItem>
+                                    <ComboBoxItem>2</ComboBoxItem>
+                                    <ComboBoxItem>3</ComboBoxItem>
+                                    <ComboBoxItem>4</ComboBoxItem>
+                                    <ComboBoxItem>5</ComboBoxItem>
+                                    <ComboBoxItem>6</ComboBoxItem>
+
+                                </ComboBox>
+
+
+
+                                <Label
+                                    Margin="20,0,10,10"
+                                    Content="Room Type"
+                                    FontWeight="Bold"/>
+
+                                <ComboBox Name="roomtype" Margin="25,0,10,10">
+                                    <ComboBoxItem>Single</ComboBoxItem>
+                                    <ComboBoxItem>Double</ComboBoxItem>
+                                    <ComboBoxItem>Twin</ComboBoxItem>
+                                    <ComboBoxItem>Duplex</ComboBoxItem>
+                                    <ComboBoxItem>Suite</ComboBoxItem>
+                                </ComboBox>
+
+                                <Label
+                                    Margin="20,0,10,10"
+                                    Content="Floor Number"
+                                    FontWeight="Bold"/>
+
+                                <ComboBox Name="floornum" Margin="25,0,10,10">
+                                    <ComboBoxItem>1</ComboBoxItem>
+                                    <ComboBoxItem>2</ComboBoxItem>
+                                    <ComboBoxItem>3</ComboBoxItem>
+                                    <ComboBoxItem>4</ComboBoxItem>
+                                    <ComboBoxItem>5</ComboBoxItem>
+                                </ComboBox>
+
+                                <Label
+                                    Margin="20,0,10,10"
+                                    Content="Room Number"
+                                    FontWeight="Bold"/>
+
+                                <ComboBox Name="roomnum" Margin="25,0,10,10" >
+                                    <ComboBoxItem>201</ComboBoxItem>
+                                    <ComboBoxItem>202</ComboBoxItem>
+                                    <ComboBoxItem>203</ComboBoxItem>
+                                    <ComboBoxItem>204</ComboBoxItem>
+                                    <ComboBoxItem>205</ComboBoxItem>
+                                    <ComboBoxItem>206</ComboBoxItem>
+                                    <ComboBoxItem>207</ComboBoxItem>
+                                    <ComboBoxItem>208</ComboBoxItem>
+                                    <ComboBoxItem>209</ComboBoxItem>
+                                    <ComboBoxItem>210</ComboBoxItem>
+                                    <ComboBoxItem>301</ComboBoxItem>
+                                    <ComboBoxItem>302</ComboBoxItem>
+                                    <ComboBoxItem>303</ComboBoxItem>
+                                    <ComboBoxItem>304</ComboBoxItem>
+                                    <ComboBoxItem>305</ComboBoxItem>
+                                    <ComboBoxItem>306</ComboBoxItem>
+                                    <ComboBoxItem>307</ComboBoxItem>
+                                    <ComboBoxItem>308</ComboBoxItem>
+                                    <ComboBoxItem>309</ComboBoxItem>
+                                    <ComboBoxItem>310</ComboBoxItem>
+                                    <ComboBoxItem>401</ComboBoxItem>
+                                    <ComboBoxItem>402</ComboBoxItem>
+                                    <ComboBoxItem>403</ComboBoxItem>
+                                    <ComboBoxItem>404</ComboBoxItem>
+                                    <ComboBoxItem>405</ComboBoxItem>
+                                    <ComboBoxItem>406</ComboBoxItem>
+                                    <ComboBoxItem>407</ComboBoxItem>
+                                    <ComboBoxItem>408</ComboBoxItem>
+                                    <ComboBoxItem>409</ComboBoxItem>
+                                    <ComboBoxItem>410</ComboBoxItem>
+                                    <ComboBoxItem>501</ComboBoxItem>
+                                    <ComboBoxItem>502</ComboBoxItem>
+                                    <ComboBoxItem>503</ComboBoxItem>
+                                    <ComboBoxItem>504</ComboBoxItem>
+                                    <ComboBoxItem>505</ComboBoxItem>
+                                    <ComboBoxItem>506</ComboBoxItem>
+                                    <ComboBoxItem>507</ComboBoxItem>
+                                    <ComboBoxItem>508</ComboBoxItem>
+                                    <ComboBoxItem>509</ComboBoxItem>
+                                    <ComboBoxItem>510</ComboBoxItem>
+                                </ComboBox>
+
+
+                                <Label
+                                    Margin="20,0,10,10"
+                                    Content="Entry [Date]"
+                                    FontWeight="Bold"/>
+
+                                <DatePicker Name="entrydate" Margin="20,-1,10,10"/>
+
+                                <Label
+                                    Margin="20,0,10,10"
+                                    Content="Deperture [Date]"
+                                    FontWeight="Bold"/>
+
+                                <DatePicker Name="leavdate"  Margin="20,-1,10,10"/>
+
+                                <Button x:Name="btnfood" Click="btnfoodmenu"  Margin="10,0,10,10" Width="150" Height="20">Food and menu</Button>
+
+                                <CheckBox x:Name="check">Checked in</CheckBox>
+                                <CheckBox x:Name="sms">Send sms?</CheckBox>
+                                <CheckBox x:Name="supply">Food/Supply status?</CheckBox>
+
+                                <Button x:Name="btnfinalize" Click="brfinalizebill" GotFocus="visible_btnsubmit"  Margin="10,15,10,10" Width="150" Height="20">Finalize bill</Button>
+                                <Button x:Name="btnSub" Click="btn_submit" Margin="10,0,10,10" Width="150" Height="20" Visibility="Hidden">Submit</Button>
+
+                            </StackPanel>
+
+                            <!--#endregion-->
+
+                            <!--#region Reservation part3 -->
+
+                            <StackPanel Width="5"/>
+
+                            <StackPanel 
+                                Background="#FFB1AAAA"
+                                Width="340"/>
+
+                            <ComboBox x:Name="combobox" Margin="-350,0,20,700"  Height="30" Width="267" Visibility="Hidden">
+
+                            </ComboBox>
+
+                            <Button x:Name="updatebtn" Click="update_btn" Margin="-350,15,10,-150" Width="200" Height="30" Background="#FF66EBC6" Visibility="Hidden">Update</Button>
+
+                            <Border x:Name="deletborde" BorderBrush="Red"
+                            BorderThickness="2"
+                            VerticalAlignment="Center"
+                             Margin="-350,15,10,-250" Width="200" Height="30" Visibility="Hidden"/>
+
+                            <Button x:Name="btndelete"  Margin="-350,15,10,-250" Width="200" Height="30" Background="#FF9F3838" Visibility="Hidden" Click="del_btn">Delete</Button>
+
+                            <Border x:Name="deletborder" BorderBrush="Black"
+                            BorderThickness="2"
+                            VerticalAlignment="Center"
+                             Margin="-350,15,10,-350" Width="200" Height="30" />
+
+                            <Button  Margin="-350,15,10,-350" Width="200" Height="30" GotFocus="Button_GotFocus">Edit existing reservation</Button>
+
+                            <Button  Margin="-350,15,10,-450" Width="200" Height="30" Background="#FFD4C3C3" Click="cleardatabtn">New reservation</Button>
+
+                        </StackPanel>
+                        <!--#endregion-->
+
+
+                    </TabItem>
+                    <!--#endregion-->
+
+                    <!--#region Search -->
+
+                    <TabItem   
+                           Header="Universal Search"
+                           FontSize="16"
+                           FontFamily="Adobe Caslon "
+                           Margin="5,0,0,0" >
+
+
+                        <StackPanel Orientation="Vertical">
+
+                            <Image x:Name="errorimg" Source="images/searcherror_6.png" Width="308" Height="186" Visibility="Hidden"/>
+
+                            <StackPanel Margin="30,150,0,15" Orientation="Horizontal">
+
+                                <TextBox Height="40" 
+                                     Width="837"
+                                     Background="#ffd1c9c9" 
+                                         Name="searchtxt"/>
+
+                                <Button
+                                Height="40"
+                                Width="50" GotFocus="Button_GotFocus_1">
+
+                                    <Image x:Name="searchbtn" Source="images/ic_action_search (3).png"  />
+                                </Button>
+                            </StackPanel>
+
+                            <DataGrid Name="datagrid1"></DataGrid>
+
+                        </StackPanel>
+
+                    </TabItem>
+
+                    <!--#endregion-->
+
+
+                    <!--#region Data Grid -->
+
+                    <TabItem   Header="Reservation Adv.View"
+                           FontSize="16"
+                           FontFamily="Adobe Caslon "
+                           Margin="5,0,0,0" GotFocus="TabItem_GotFocus"
+                               >
+
+                        <DataGrid x:Name="datagrid" ></DataGrid>
+
+                    </TabItem>
+
+                    <!--#endregion-->
+
+
+                    <!--#region Room Visibility -->
+
+                    <TabItem   Header="Room availability"
+                           FontSize="16"
+                   FontFamily="Adobe Caslon "
+                   Height="37"
+                   Margin="5,0,0,0" VerticalAlignment="Top" >
+
+                        <StackPanel Orientation="Horizontal">
+
+                            <StackPanel Orientation="Vertical" Width="453" Background="#FFC6C4C4">
+                                <Label FontWeight="Bold" FontFamily="Adobe Caslon Pro Bold" Content="Occupied"></Label>
+                                <Label Margin="0,15" Content="Room#| Type | ID# | Name | Phone"/>
+
+                                <ListBox
+                                    Background="LightGray"
+                                    Name="occuplst"
+                                    Height="380"
+                                    >
+
+                                </ListBox>
+                            </StackPanel>
+
+                            <StackPanel Width="15" ></StackPanel>
+
+                            <StackPanel Width="495" Background="#FFC6C4C4">
+
+                                <Label FontWeight="Bold" FontFamily="Adobe Caslon Pro Bold" Content="Reserved"></Label>
+                                <Label Margin="0,15" Content="Room#| Type | ID# | Name | Phone # | Entry | Depart"/>
+
+                                <ListBox
+                                    Background="LightGray"
+                                    Name="reservedlst"
+                                    Height="380" >
+
+                                </ListBox>
+                            </StackPanel>
+
+                        </StackPanel>
+                        <!--#endregion-->
+
+                    </TabItem>
+
+
+                </TabControl>
+
+
+            </StackPanel>
+
+            <!--#endregion-->
+
+
+        </Grid>
+    </ScrollViewer>
+</Window>
